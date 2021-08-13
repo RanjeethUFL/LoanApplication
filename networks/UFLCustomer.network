@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Network xmlns="http://soap.sforce.com/2006/04/metadata">
+    <allowInternalUserLogin>false</allowInternalUserLogin>
+    <allowMembersToFlag>false</allowMembersToFlag>
+    <changePasswordTemplate>unfiled$public/CommunityChangePasswordEmailTemplate</changePasswordTemplate>
+    <communityRoles/>
+    <disableReputationRecordConversations>true</disableReputationRecordConversations>
+    <emailSenderAddress>ranjeethkumarcheena8@gmail.com</emailSenderAddress>
+    <emailSenderName>UFLCustomer</emailSenderName>
+    <enableCustomVFErrorPageOverrides>false</enableCustomVFErrorPageOverrides>
+    <enableDirectMessages>true</enableDirectMessages>
+    <enableGuestChatter>false</enableGuestChatter>
+    <enableGuestFileAccess>true</enableGuestFileAccess>
+    <enableGuestMemberVisibility>false</enableGuestMemberVisibility>
+    <enableInvitation>false</enableInvitation>
+    <enableKnowledgeable>false</enableKnowledgeable>
+    <enableMemberVisibility>false</enableMemberVisibility>
+    <enableNicknameDisplay>true</enableNicknameDisplay>
+    <enablePrivateMessages>false</enablePrivateMessages>
+    <enableReputation>false</enableReputation>
+    <enableShowAllNetworkSettings>false</enableShowAllNetworkSettings>
+    <enableSiteAsContainer>true</enableSiteAsContainer>
+    <enableTalkingAboutStats>true</enableTalkingAboutStats>
+    <enableTopicAssignmentRules>true</enableTopicAssignmentRules>
+    <enableTopicSuggestions>false</enableTopicSuggestions>
+    <enableUpDownVote>false</enableUpDownVote>
+    <forgotPasswordTemplate>unfiled$public/CommunityForgotPasswordEmailTemplate</forgotPasswordTemplate>
+    <gatherCustomerSentimentData>false</gatherCustomerSentimentData>
+    <networkMemberGroups>
+        <profile>Admin</profile>
+        <profile>Customer Community Login User</profile>
+        <profile>Customer Community Plus Login User</profile>
+        <profile>Customer Community User</profile>
+        <profile>Customer Community Plus User</profile>
+        <profile>Customer Community Login</profile>
+        <profile>Customer Community Plus Login</profile>
+    </networkMemberGroups>
+    <networkPageOverrides>
+        <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>
+        <forgotPasswordPageOverrideSetting>Designer</forgotPasswordPageOverrideSetting>
+        <homePageOverrideSetting>Designer</homePageOverrideSetting>
+        <loginPageOverrideSetting>Designer</loginPageOverrideSetting>
+        <selfRegProfilePageOverrideSetting>Designer</selfRegProfilePageOverrideSetting>
+    </networkPageOverrides>
+    <picassoSite>UFLCustomer1</picassoSite>
+    <selfRegistration>false</selfRegistration>
+    <sendWelcomeEmail>true</sendWelcomeEmail>
+    <site>UFLCustomer</site>
+    <status>Live</status>
+    <tabs>
+        <defaultTab>home</defaultTab>
+        <standardTab>Chatter</standardTab>
+    </tabs>
+    <welcomeTemplate>unfiled$public/CommunityWelcomeEmailTemplate</welcomeTemplate>
+</Network>

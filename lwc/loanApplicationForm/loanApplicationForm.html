@@ -1,0 +1,65 @@
+<template>
+    <div class="background">
+      <lightning-accordion allow-multiple-sections-open
+                         active-section-name={activeSections}>
+            <lightning-accordion-section name="A" label="Contact Information">
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item size="12" large-device-size="6"  medium-device-size="6" small-device-size="12" padding="around-small">
+                    <lightning-input type="text" required="true" message-when-pattern-mismatch="Please enter 12 digit number" pattern="[0-9]{12}" max-length="12" min-length="12" label="Aadhaar Number" value={loanRecord.Aadhaar_Number__c} onchange={handleChange}></lightning-input>
+                    <lightning-input type="text" required="true" label="First Name" value={loanRecord.First_Name__c} onchange={handleChange}></lightning-input>
+                    <lightning-input type="text" required="true" label="Last Name" value={loanRecord.Last_Name__c} onchange={handleChange}></lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-accordion-section>
+
+        <lightning-accordion-section name="B" label="Address Information">
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12" padding="around-small">
+                   <lightning-input type="text" label="Current Address" value={loanRecord.Current_Address__c} onchange={handleChange}></lightning-input>
+                    <lightning-input type="text" label="City" value={loanRecord.City__c} onchange={handleChange}></lightning-input>
+                    <lightning-input type="text" label="District" value={loanRecord.District__c} onchange={handleChange}></lightning-input>
+                    <lightning-input type="text" label="State" value={loanRecord.State__c} onchange={handleChange}></lightning-input>
+                    <lightning-input type="text" message-when-pattern-mismatch="Please enter valid zip code" pattern="[0-9]{6}" label="Pin Code" value={loanRecord.Pin_Code__c} onchange={handleChange}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12" padding="around-small">
+                    <lightning-input type="text" required="true" message-when-pattern-mismatch="Please enter valid PAN ex: DEPAK2222H" pattern="[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}" max-length="10" min-length="10" label="PAN" value={loanRecord.PAN__c} onchange={handleChange}></lightning-input>
+                    <lightning-combobox label="Martial Status" value={loanRecord.Marital_status__c}
+                        options={mspickListvalues} onchange={handleChange} ></lightning-combobox> 
+                    <lightning-combobox label="Education"  value={loanRecord.Education__c}	
+                        options={edpickListvalues} onchange={handleChange} ></lightning-combobox>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-accordion-section>
+
+        <lightning-accordion-section name="C" label="Business Information">
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item size="12" large-device-size="6" medium-device-size="6" small-device-size="12" padding="around-small">
+                    <lightning-combobox required="true" label="Loan Type" value={loanRecord.Loan_Type__c}
+                        options={loanpickListvalues} onchange={handleChange}></lightning-combobox>
+                        <template if:true={showProduct}>
+                            <lightning-input type="text" label="Product" value={loanRecord.Product__c} onchange={handleChange}>></lightning-input>
+                        </template>
+                        <lightning-input required="true" type="number" max-length="18" label="Loan Amount" value={loanRecord.Loan_Amount__c}  onchange={handleChange}></lightning-input>
+                        <lightning-input required="true" type="number" max-length="18" label="Duration(Months)" value={loanRecord.Duration__c}  onchange={handleChange}></lightning-input>
+                </lightning-layout-item>
+                
+                <lightning-layout-item size="12" large-device-size="6"  medium-device-size="6" small-device-size="12" padding="around-small">
+                    <lightning-combobox required="true" label="Employment Type" value={loanRecord.Employment_Type__c}
+                        options={emppickListvalues} onchange={handleChange} ></lightning-combobox>
+                        <template if:true={isBusiness}>
+                            <lightning-input type="text" label="Type of Business" value={loanRecord.Type_of_Business__c}  onchange={handleChange}></lightning-input>
+                        </template>
+                        <template if:true={isSalaried}>
+                            <lightning-input type="text" label="Company" value={loanRecord.Company__c}  onchange={handleChange}></lightning-input>
+                            <lightning-input max-length="3" type="number" label="CTC(Yearly)" value={loanRecord.CTC__c}  onchange={handleChange}></lightning-input>
+                        </template>
+                </lightning-layout-item>
+                
+            </lightning-layout>  
+        </lightning-accordion-section> 
+      </lightning-accordion>
+      <lightning-button label="Submit" onclick={insertLoanRecord} class="slds-p-bottom_small slds-align_absolute-center" variant="brand"></lightning-button>
+
+   </div>
+
+</template>
